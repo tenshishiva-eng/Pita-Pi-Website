@@ -1,0 +1,88 @@
+Build a premium, modern, mobile-first website for "Pita Pit India" (North & East India franchise — Delhi NCR, Chandigarh, expanding to Ambala & Karnal). Use React + Tailwind CSS. The design should feel like a high-end fast-casual restaurant brand (think: clean grid layouts, generous white space, confident typography, warm natural color palette) — NOT like a generic free WordPress template. Avoid default "blob shape" decorations; use intentional, restrained design choices instead.
+
+DESIGN DIRECTION (be specific about this — make it look professional):
+- Color palette: deep forest green + warm terracotta/orange accent + cream/off-white background + charcoal text (avoid pure black). 
+- Typography: a confident serif or rounded display font for headings (something food-brand-appropriate, e.g. similar to "Fraunces" or "Sora" from Google Fonts), paired with a clean sans-serif body font (e.g. "Inter" or "Manrope").
+- Generous padding/whitespace, consistent 8px spacing scale, subtle shadows (no harsh drop shadows), rounded corners on cards (12-16px radius).
+- Subtle scroll-reveal animations on sections, smooth hover states on buttons/cards (scale or lift, not garish).
+- Every section should feel intentional — no leftover placeholder/lorem-ipsum text anywhere in the final output.
+
+CRITICAL REQUIREMENT — STOCK IMAGES FOR EVERY DISH:
+For every single menu item listed below, include a real food photo next to/above the dish name and description — not a generic icon. Pull relevant high-quality food photography using Unsplash's source API format, e.g.:
+`https://source.unsplash.com/600x400/?chicken,pita,wrap`
+`https://source.unsplash.com/600x400/?greek,salad`
+`https://source.unsplash.com/600x400/?mango,milkshake`
+Build the query terms around each specific dish's main ingredients (e.g. for "Falafel Pita Wrap" use `?falafel,pita`, for "Dark Chocolate Protein Shake" use `?chocolate,milkshake`). Every menu card MUST have: [dish photo] + [dish name] + [1-line description] + [veg/non-veg dot indicator] + [price]. No dish should appear as text-only or image-only — always both, paired.
+
+BRAND CONTENT TO USE (real, extracted from the client's existing site — don't invent conflicting facts):
+- Tagline: "Healthy Habits, Happy Wraps" — "Pitapit: Healthy on Your Terms"
+- Founder story: Pita Pit was founded in 1995 when Nelson Lang rolled the very first pita in Kingston, Ontario, Canada — built on a vision to offer a genuinely healthy alternative to fast food. The concept began franchising across Canada in 1997, expanded into the United States in 1999, and went international with its first overseas store opening in New Zealand in 2008.
+- Today: Pita Pit operates 450+ stores across North America, Europe, Asia, the Middle East, and Asia-Pacific under the philosophy of "fresh thinking, healthy eating."
+- India / this franchise: Pita Pit India (North & East) is led by master franchisee Sameer Lamba, with locations across Delhi NCR and Chandigarh, and active expansion underway into Ambala and Karnal as part of a wider FY2025-26 push across North India.
+- Brand pillars (use as 6 icon-cards in About/Franchise section): 
+  1. Crave-Able — food people genuinely dream about
+  2. Customisable — have it your way, build your own
+  3. Fast, Portable & Convenient — built for on-the-go life
+  4. Healthy — guilt-free dining, genuinely
+  5. Fun & Friendly — life's too short to take too seriously
+  6. Environmentally Friendly — because we live on this planet too
+- Menu categories (from the live site's "Our Popular Food" section): Pita Wraps, Salads, Rice Bowls, Sides, Beverages, Desserts
+- Known bestsellers to seed the menu with real names (add stock photo + price to each, prices are placeholders for the client to edit): Chicken Club Pita Wrap, Falafel Pita Wrap, Roasted Chicken Breast Pita Wrap, Chicken Crave Salad, Chicken Tikka Salad, Veg Greek Salad, Classic Mango Milkshake, Dark Chocolate Protein Shake. Add 2-3 sensible additional placeholder items under Rice Bowls, Sides, and Desserts (clearly marked as "[sample — replace with real menu]" in code comments) since the source site doesn't list those individually.
+- Contact info gap: the live site has NO phone number or address published. Build the Contact page with clearly labeled placeholder fields for Phone, Address, and Hours (e.g. "[Add outlet phone number]") so the client knows exactly what to fill in — do not invent a fake number or address.
+- Email: info@pitapitindia.com
+
+BUILD THESE PAGES:
+
+1) HOME
+   - Sticky nav: Logo | Home | About Us | Menu | Gallery | Franchise | Blog | Contact Us (Contact Us styled as the standout CTA button, matching the live site's structure)
+   - Hero: tagline "Healthy Habits, Happy Wraps", sub-line "Pitapit: Healthy on Your Terms", CTA buttons "View Menu" + "Find a Location", professional hero food photography
+   - "Our Popular Food" category strip: Pita Wraps / Salads / Rice Bowls / Sides / Beverages / Desserts — each with its own representative dish photo (not a flat icon)
+   - "Our Story" teaser (2-3 polished sentences from the founder story above) linking to full About Us
+   - Bestsellers grid using the 8 dishes above — full photo + name + description + price on each card
+   - Brand pillars strip (6 cards, short icon + label, from the list above)
+   - Latest News/Blog preview (2-3 cards) — e.g. expansion into Ambala & Karnal, Sameer Lamba as master franchisee
+   - Testimonials section (3 sample reviews, clearly marked placeholder for client to swap with real Google reviews)
+   - Footer: working social links (ask client for real URLs — don't leave as "#"), email, locations summary, quick links
+
+2) ABOUT US
+   - Headline: "Fresh Thinking. Healthy Eating. Since 1995."
+   - Full founder story (expand the one above into 2-3 warm paragraphs)
+   - History timeline: 1995 (founded, Kingston Ontario) → 1997 (Canada franchising) → 1999 (US expansion) → 2008 (first international store, New Zealand) → Today (450+ stores globally) → India (North & East franchise, Delhi NCR & Chandigarh, expanding to Ambala & Karnal)
+   - Brand pillars section (the 6 cards)
+   - Stat strip: "30+ years of fresh thinking" / "450+ stores worldwide" / "20+ fillings, 40+ toppings to mix and match"
+
+3) MENU (the most important fix)
+   - Real structured text menu, organized by category tabs: Pita Wraps | Salads | Rice Bowls | Sides | Beverages | Desserts
+   - Every single item: stock photo (per the Unsplash query rule above) + name + 1-line description + veg/non-veg dot + price (editable placeholder)
+   - Veg/non-veg filter toggle, category tabs
+   - "Build Your Own Pita" interactive-feeling section: show fillings + toppings + sauces as visual chip/tag groups with small icons
+   - "Order Now" or "Find Outlet to Order" CTA button on every item card
+
+4) GALLERY
+   - Responsive masonry grid of food + restaurant interior photos (stock placeholders, labeled for client to replace with real photography)
+   - Lightbox on click
+
+5) FRANCHISE
+   - "Why Pita Pit?" intro
+   - "Who We Are" founder section
+   - Brand pillars (reuse component from About Us)
+   - "Becoming a Franchisee" — bullet list of ideal franchisee traits (builder mentality, hard workers, people-oriented, long-term thinkers, love food, take the business seriously but not themselves)
+   - CTA form: "Enquire About a Franchise" (Name, Email, Phone, City of interest, Message)
+
+6) BLOG / NEWS
+   - Simple card-grid blog listing layout (title, date, category tag, excerpt, "Read more")
+   - Seed with the 2 real headlines: expansion into Ambala & Karnal, and Sameer Lamba named master franchisee
+   - Individual blog post template page
+
+7) CONTACT US
+   - Contact form (Name, Email, Phone, Message) with validation
+   - Clearly labeled placeholder fields for Phone / Address / Hours per outlet (since the source site is missing these — flag for client to fill in)
+   - Map embed placeholder
+   - Working social icons (placeholder real URLs, not "#")
+
+GLOBAL REQUIREMENTS:
+- Fully responsive, mobile-first, fast-loading, optimized images
+- SEO basics: proper titles, meta descriptions, semantic heading hierarchy, alt text on every image (including each dish photo — alt text should be the dish name)
+- Sticky "Order Now" / "Find Outlet" button on mobile
+- All placeholder content (sample menu items, sample reviews, missing contact info, social URLs) clearly marked in code comments so the client knows exactly what to replace before launch
+- No leftover lorem-ipsum or unedited template text anywhere — every section should read as finished, professional copy
