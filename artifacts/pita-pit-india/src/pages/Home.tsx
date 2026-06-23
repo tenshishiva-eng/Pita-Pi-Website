@@ -8,7 +8,7 @@ import { BlogCard } from "@/components/BlogCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
 
 const categories = [
-  { name: "Pita Wraps", imageQuery: "pita,wrap" },
+  { name: "Pita Wraps", imageQuery: "pita,wrap", src: "/pita_wraps.jpg" },
   { name: "Salads", imageQuery: "salad,fresh" },
   { name: "Rice Bowls", imageQuery: "rice,bowl,healthy" },
   { name: "Sides", imageQuery: "hummus,side,food" },
@@ -110,7 +110,7 @@ export default function Home() {
               <Link key={index} href="/menu" className="snap-start shrink-0 w-64 md:w-auto group block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-2">
                   <img 
-                    src={`https://picsum.photos/seed/${category.imageQuery.replace(/,/g, '-')}/400/300`} 
+                    src={(category as any).src ?? `https://picsum.photos/seed/${category.imageQuery.replace(/,/g, '-')}/400/300`} 
                     alt={category.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
