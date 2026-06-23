@@ -6,14 +6,15 @@ import { MenuCard } from "@/components/MenuCard";
 import { BrandPillars } from "@/components/BrandPillars";
 import { BlogCard } from "@/components/BlogCard";
 import { TestimonialCard } from "@/components/TestimonialCard";
+import { getImageOverride } from "@/lib/imageStore";
 
 const categories = [
-  { name: "Pita Wraps", imageQuery: "pita,wrap", src: "/pita_wraps.jpg" },
-  { name: "Salads", imageQuery: "salad,fresh" },
-  { name: "Rice Bowls", imageQuery: "rice,bowl,healthy" },
-  { name: "Sides", imageQuery: "hummus,side,food" },
-  { name: "Beverages", imageQuery: "milkshake,smoothie" },
-  { name: "Desserts", imageQuery: "dessert,sweet" },
+  { name: "Pita Wraps", key: "cat-pita-wraps", imageQuery: "pita,wrap", defaultSrc: "/pita_wraps.jpg" },
+  { name: "Salads", key: "cat-salads", imageQuery: "salad,fresh" },
+  { name: "Rice Bowls", key: "cat-rice-bowls", imageQuery: "rice,bowl,healthy" },
+  { name: "Sides", key: "cat-sides", imageQuery: "hummus,side,food" },
+  { name: "Beverages", key: "cat-beverages", imageQuery: "milkshake,smoothie" },
+  { name: "Desserts", key: "cat-desserts", imageQuery: "dessert,sweet" },
 ];
 
 const bestsellers = [
@@ -67,7 +68,7 @@ export default function Home() {
       <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1600&h=900&fit=crop" 
+            src={getImageOverride("hero-background") ?? "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=1600&h=900&fit=crop"} 
             alt="Fresh Pita Pit Wrap" 
             className="w-full h-full object-cover"
           />
@@ -110,7 +111,7 @@ export default function Home() {
               <Link key={index} href="/menu" className="snap-start shrink-0 w-64 md:w-auto group block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-2">
                   <img 
-                    src={(category as any).src ?? `https://picsum.photos/seed/${category.imageQuery.replace(/,/g, '-')}/400/300`} 
+                    src={getImageOverride(category.key) ?? category.defaultSrc ?? `https://picsum.photos/seed/${category.imageQuery.replace(/,/g, '-')}/400/300`} 
                     alt={category.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
